@@ -1,13 +1,17 @@
 from matplotlib import pyplot as plt
 import pandas as pd
-import os
+import os, sys
 
 #Personal Modules
-os.chdir("../")
+from prefs import projects_path
+
+sys.path.insert(0,projects_path)
+
 from Schedule import templates
 
+
 #Globals
-schedule_csv_path = "data_files/schedule_data.csv"
+schedule_csv_path = r"data_files/schedule_data.csv"
 
 
 def update_figures():
@@ -21,3 +25,7 @@ def update_figures():
     fig1.savefig("Jacob-Way.github.io/images/fig1.svg")
     
 update_figures()
+
+os.chdir("Jacob-Way.github.io")
+os.system('git commit -a -m "Updated Graphs"')
+os.system('git push origin main')
