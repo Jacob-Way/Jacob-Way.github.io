@@ -5,8 +5,9 @@ import os, sys
 #Personal Modules
 from prefs import projects_path
 
-sys.path.insert(0,projects_path)
-
+os.chdir(projects_path)
+#Add something to the path
+sys.path.insert(0, projects_path)
 from Schedule import templates
 
 
@@ -24,8 +25,9 @@ def update_figures():
     fig1 = templates.activity_tracker(dates,levels)
     fig1.savefig("Jacob-Way.github.io/images/fig1.svg")
     
+def stage_commit_push():
+    os.chdir("Jacob-Way.github.io")
+    os.system('git commit -a -m "Updated Graphs"')
+    os.system('git push origin main')
 update_figures()
-
-os.chdir("Jacob-Way.github.io")
-os.system('git commit -a -m "Updated Graphs"')
-os.system('git push origin main')
+stage_commit_push()
