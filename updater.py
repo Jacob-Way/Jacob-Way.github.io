@@ -24,6 +24,11 @@ def update_figures():
     #Activity Graph
     fig1 = templates.activity_tracker(dates,levels)
     fig1.savefig("Jacob-Way.github.io/images/fig1.svg")
+
+    weekly_data = pd.read_csv(schedule)
+
+    #Schedule
+    #fig2 = templates.weekly_schedule(weekly_data)
     
 def stage_commit_push():
     os.chdir("Jacob-Way.github.io")
