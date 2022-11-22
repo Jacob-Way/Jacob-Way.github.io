@@ -25,3 +25,8 @@
 .navbar li a:hover {
     background-color: #111;
   }
+
+.latex-inline {
+  vertical-align:middle;
+  /*-webkit-transform: scale(0.25);*/
+}
