@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<link rel="stylesheet" href="../../main.css">
+<link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+<title>N Fold Mixing</title>
+
+</head>
+
+<body>
+
+<ul class = "navbar">
+  <li><a href="..\..\index.html">Home</a></li>
+  <li><a href = "..\..\schedule.html">Schedule</a></li>
+  <li><a href="..\..\projects.html">Projects</a></li>
+  <!--<li><a href="#projects">Projects</a></li>
+  <li><a href="#blog">Blog</a></li>
+  <li><a href="#about">About</a></li>-->
+</ul>
+<br>
+<br>
+<h1>N-fold Mixing</h1>
+
+<p>
+<b>Dynamical System: </b> A dynamical system is a 4-tuple <latex>(X,\mathcal B,\mu,f)</latex>, 
+where <latex>(X,\mathcal B,\mu)</latex> is a measure space and <latex>f:X\to X</latex> is a 
+function modeling some dynamics on the space <latex>X</latex>
+</p>
+
+<p>
+<b>Measure Preserving: </b> A dynamical system is measure-preserving if <latex>\mu(f^{-1}(A)) = \mu(A)</latex> for all <latex> A\in \mathcal B</latex>.
+</p>
+
+<p>
+<b>Mixing: </b> A dynamical system is mixing if <latex>\lim_{n\to\infty}\mu(f^{-n}(A)\cap B) =\mu(A)\mu(B)</latex> for all <latex>A,B\in \mathcal B </latex>
+</p>
+
+<p>
+<b>Note: </b> When compared to higher order mixing, this is called 2-fold mixing, since it involves 2 sets.
+</p>
+
+<p>
+<b>Example: </b> An easy way to understand this equation is using the example of mixing paint. If <latex>X</latex> represents
+the inside of a can of white paint, <latex>\mu</latex> measures the relative volume of regions in the bucket, and <latex>f</latex> models the effect of stirring the bucket,
+we can imagine replacing region <latex>B</latex> with blue paint, then stirring <latex>n</latex> times, then scooping paint from region <latex>A</latex>.
+If our stirring function is mixing, we can expect the proportion of the paint in region <latex>A</latex> which is blue (or which originated in region B) to be <latex>\mu(B)</latex>,
+the same as the proportion of blue paint before we stirred the bucket. Also, this fact will be independent of our choice of <latex>A</latex> and <latex>B</latex>.
+</p>
+
+<p>
+<b>3-fold mixing: </b> A dynamical system is 3-fold mixing if <latex>\lim_{n\to\infty, m\to\infty}\mu(f^{-m-n}(A)\cap f^{-n}(B)\cap C) =\mu(A)\mu(B)\mu(C)</latex> for all <latex>A,B,C\in \mathcal B </latex>
+</p>
+
+<p>
+<b>Note: </b> Using the paint mixing example, if <latex>f</latex> is 3-fold mixing, we could instead use two buckets of white paint, initially put blue paint in region <latex>C</latex>, stir <latex>m</latex> times, then scoop region <latex>B</latex>
+out and place it it region <latex>B</latex> of a second bucket of white paint, then mix <latex>n</latex> more times  and scoop out region <latex>A</latex>. The proportion of blue paint in this scoop should approach <latex>\mu(C)\mu(B)</latex> if we mix more.
+</p>
+
+<p>
+<b>Note: </b> We can easily see that 3-fold mixing implies 2-fold mixing by letting <latex>A=X</latex>. However, whether 2-fold mixing implies 3-fold mixing is surprisingly unknown.
+</p>
+
+<p>
+  <b>Example: </b> A common example of a dynamical system is a shift map. In this system, the space is a sequence space, and the transformation function shifts a sequence one term to the left or right.
+  For example, <latex>X = \{0,1\}^{\mathbb Z}, f(x)_i := x_{i+1}</latex>, with <latex>\mu</latex> being the coin-toss measure. This system is mixing since different elements in any sequence are independently chosen,
+  so any "cylinder set", which is a set defined by restricting a finite number of elements of the sequence, becomes independent from its translation eventually.
+  By the <span style="color:red">[incomplete]</span>
+  <br>
+  We can use this space to exhibit two near-counterexamples which are 2-fold mixing but not 3-fold mixing.
+</p>
+
+<p>
+  <b>Example: </b> Consider the space <latex>X = \{0,1\}^{\mathbb Z^2}</latex>, with a family of shift functions which shift a point in this space an integer amount in each direction.
+  We will call a system mixing if <span style="color:red">[incomplete]</span>
+</p>
+
+</body>
+</html>
