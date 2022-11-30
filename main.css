@@ -30,3 +30,7 @@
   vertical-align:middle;
   /*-webkit-transform: scale(0.25);*/
 }
+
+body {
+  margin: 50px
+}
