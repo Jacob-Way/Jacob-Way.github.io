@@ -22,6 +22,7 @@
 <br>
 <br>
 <h1>N-fold Mixing</h1>
+<h2>Dynamical System Formulation</h2>
 
 <p>
 <b>Dynamical System: </b> A dynamical system is a 4-tuple <latex>(X,\mathcal B,\mu,f)</latex>, 
@@ -70,11 +71,46 @@ out and place it it region <latex>B</latex> of a second bucket of white paint, t
   <br>
   We can use this space to exhibit two near-counterexamples which are 2-fold mixing but not 3-fold mixing.
 </p>
+<h2>General Formulation</h2>
+<p>
+  Using the example of the shift space, we can define mixing in a similar way for other translation spaces, which may have several ways of translating, instead of just one.
+  We will find that, in this generalization, 2-fold mixing does not imply 3-fold mixing.
+</p>
+<p>
+  <b>Definition: </b> Consider a subspace of <latex>X = \{0,1\}^{\mathbb Z^2}</latex>, with a family of shift functions which shift a point in this space an integer amount in each direction.
+  We will call a system mixing if <latex>\mu((A-nl)\cap B) \to \mu(A)\mu(B)</latex> as <latex>n\to \infty</latex> for all <latex>l\in \mathbb Z^2</latex>,
+  3-fold mixing if <latex>\mu((A-nl)\cap(B-mp)\cap C) \to \mu(A)\mu(B)\mu(C)</latex> as <latex>n,m\to \infty</latex> for all <latex>l,p\in \mathbb Z^2</latex>.
+</p>
+<p>
+  <b>Example: </b>We can show that the entire space <latex>X</latex>, with the coin toss measure and the family of translations forms a mixing and n-fold mixing system. The reason is that for every cylinder set, depending on a finite number of terms in a lattice,
+  we can enclose the terms determining the set by a finite frame, and for a set of <latex>n</latex> cylinder sets, we can choose a finite frame that determines all of the sets.
+  since every set of different terms in the lattice is independently chosen, and any shift applied over and over will eventually lead to a frame disjoint from its original position,
+  if <latex>\{X_n\}</latex> is a collection of cylinder sets depending on a finite frame, for any collection of shifts <latex>\{l_n\}</latex>, <latex>\{(X_n+l_nm_n)\}</latex> is independent for some choice of <latex>\{m_n\}</latex>.
+  Therefore, the system is N-fold mixing for all N.
+</p>
+<p>
+  <b>Counterexample: </b> Using these new definitions for mixing, we can show that 2-fold mixing does not imply 3-fold mixing using a similar example.
+  Define <latex>Y = \{x\in X:x_{i,j}+x_{i+1,j}+x_{i,j+1} = 0\mod 2\}</latex>. Notice that, using this relationship, our choice of <latex>x_{i,j}</latex> for <latex>\{(i,0):i\in \mathbb Z\}, \{(j,0):j\leq -1\}</latex> allows us to determine <latex>x_{i,j}</latex> for all other <latex>(i,j)</latex>.
+  Therefore, a natural measure to use for <latex>Y</latex> is a coin toss measure defined using this subset of terms. Also notice that, because of the way that lattices in <latex>Y</latex> can be generated,<br>
+  the terms with coordinates in <latex>R_1 = \{(i,j):i,j\geq 0\}</latex> are completely determined by those with coordinates in <latex>S_1 = \{(i,0):i\geq 0\}</latex>, <br>
+  the terms with coordinates in <latex>R_2 = \{(i,j):i\geq 0, j\leq-i-1\}</latex> are completely determined by those with coordinates in <latex>S_2 = \{(0,j):j\leq -1\}</latex>,<br>
+  the terms with coordinates in <latex>R_3 = \{(i,j):i\leq -1,j\leq -i-1\}</latex> are completely determined by those with coordinates in <latex>S_3 = \{(i,0):i\leq -1\}</latex><br>
+  Finally, we can show that <latex>\mu</latex> is translation invariant <span style="color:red">[###]</span>. 
+  Using this fact, given any frame and any translation vector, it is possible to translate the frame a finite number of times by that vector and then translate the original frame and the new frame so that they lie in separate regions <latex>R_i</latex> <span style="color:red">[###]</span>.
+  This shows that the system we have defined is 2-fold mixing. <br>
+  Now, we can add the relationship from before, with the relationship of two adjacent terms to get: 
+  <latex>x_{i,j}+x_{i+1,j}+x_{i,j+1}+x_{i+1,j}+x_{i+2,j}+x_{i+1,j+1}+x_{i,j+1}+x_{i+1,j+1}+x_{i,j+2}= 0\mod 2 \implies x_{i,j}+x_{i+2,j}+x_{i,j+2}= 0\mod 2</latex>.
+  By induction, we also have <latex>x_{i,j}+x_{i+2^n,j}+x_{i,j+2^n}= 0\mod 2</latex> for all <latex>n</latex>. This shows, using the cylinder sets <latex>A = B = C = \{x\in X:x_{0,0}=1\}</latex> with <latex>\mu(A) = 1/2</latex>, and the translation vectors <latex>l = (1,0), p = (0,1)</latex>,
+  That <latex>\mu((A-2^nl)\cap(A-2^np)\cap A) = 0 \neq \mu(A)^3=1/8</latex> (since <latex>1+1+1 \not = 0 \mod 2</latex>) for all <latex>n</latex>, so the system is not 3-fold mixing.
+</p>
 
 <p>
-  <b>Example: </b> Consider the space <latex>X = \{0,1\}^{\mathbb Z^2}</latex>, with a family of shift functions which shift a point in this space an integer amount in each direction.
-  We will call a system mixing if <latex>\mu((A-nl)\cap B) \to \mu(A)\mu(B)</latex> as <latex>n\to \infty</latex> for all <latex>l\in \mathbb Z^2</latex>,
-  3-fold mixing if <latex>\mu((A-nl)\cap(B-mp)\cap C) \to \mu(A)\mu(B)\mu(C)</latex> as <latex>n,m\to \infty</latex> for all <latex>l,q\in \mathbb Z^2</latex>.
+  <b>Note: </b> The reason that this is not a counter-example for the 2-fold mixing implies 3-fold mixing in the dynamical system formulation is because in the above shift space, we have an entire of translation functions, while in a dynamical system, we only have one.
+  It is impossible to find 3 frames in the above example which depend on eachother but are arbitrarily far apart in a single direction. However, there is an example of a 1-d shift space which is not 3-fold mixing but is 2-fold mixing conditional to the sigma-algebra generated by a factor.
+</p>
+
+<p>
+  <b>Example: </b> <span style="color:red">[###]</span>
 </p>
 
 </body>

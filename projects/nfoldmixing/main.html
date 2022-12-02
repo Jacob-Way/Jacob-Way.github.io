@@ -22,6 +22,7 @@
 <br>
 <br>
 <h1>N-fold Mixing</h1>
+<h2>Dynamical System Formulation</h2>
 
 <p>
 <b>Dynamical System: </b> A dynamical system is a 4-tuple <img class="latex-inline" src="equations/3a9084b093.svg" alt="(X,\mathcal B,\mu,f)">, 
@@ -70,11 +71,46 @@ out and place it it region <img class="latex-inline" src="equations/957afab571.s
   <br>
   We can use this space to exhibit two near-counterexamples which are 2-fold mixing but not 3-fold mixing.
 </p>
+<h2>General Formulation</h2>
+<p>
+  Using the example of the shift space, we can define mixing in a similar way for other translation spaces, which may have several ways of translating, instead of just one.
+  We will find that, in this generalization, 2-fold mixing does not imply 3-fold mixing.
+</p>
+<p>
+  <b>Definition: </b> Consider a subspace of <img class="latex-inline" src="equations/2565230574.svg" alt="X = \{0,1\}^{\mathbb Z^2}">, with a family of shift functions which shift a point in this space an integer amount in each direction.
+  We will call a system mixing if <img class="latex-inline" src="equations/393706fa64.svg" alt="\mu((A-nl)\cap B) \to \mu(A)\mu(B)"> as <img class="latex-inline" src="equations/802e6889b4.svg" alt="n\to \infty"> for all <img class="latex-inline" src="equations/cf9f2e53ae.svg" alt="l\in \mathbb Z^2">,
+  3-fold mixing if <img class="latex-inline" src="equations/2dd602a5d0.svg" alt="\mu((A-nl)\cap(B-mp)\cap C) \to \mu(A)\mu(B)\mu(C)"> as <img class="latex-inline" src="equations/e1625d823d.svg" alt="n,m\to \infty"> for all <img class="latex-inline" src="equations/858b16d5bd.svg" alt="l,p\in \mathbb Z^2">.
+</p>
+<p>
+  <b>Example: </b>We can show that the entire space <img class="latex-inline" src="equations/2e2dc6b383.svg" alt="X">, with the coin toss measure and the family of translations forms a mixing and n-fold mixing system. The reason is that for every cylinder set, depending on a finite number of terms in a lattice,
+  we can enclose the terms determining the set by a finite frame, and for a set of <img class="latex-inline" src="equations/e7b31363a1.svg" alt="n"> cylinder sets, we can choose a finite frame that determines all of the sets.
+  since every set of different terms in the lattice is independently chosen, and any shift applied over and over will eventually lead to a frame disjoint from its original position,
+  if <img class="latex-inline" src="equations/9b723dcf25.svg" alt="\{X_n\}"> is a collection of cylinder sets depending on a finite frame, for any collection of shifts <img class="latex-inline" src="equations/2312807bf7.svg" alt="\{l_n\}">, <img class="latex-inline" src="equations/a390fec388.svg" alt="\{(X_n+l_nm_n)\}"> is independent for some choice of <img class="latex-inline" src="equations/374e0bd980.svg" alt="\{m_n\}">.
+  Therefore, the system is N-fold mixing for all N.
+</p>
+<p>
+  <b>Counterexample: </b> Using these new definitions for mixing, we can show that 2-fold mixing does not imply 3-fold mixing using a similar example.
+  Define <img class="latex-inline" src="equations/7c1a3e6fff.svg" alt="Y = \{x\in X:x_{i,j}+x_{i+1,j}+x_{i,j+1} = 0\mod 2\}">. Notice that, using this relationship, our choice of <img class="latex-inline" src="equations/4f71c57d1c.svg" alt="x_{i,j}"> for <img class="latex-inline" src="equations/f3b1183291.svg" alt="\{(i,0):i\in \mathbb Z\}, \{(j,0):j\leq -1\}"> allows us to determine <img class="latex-inline" src="equations/4f71c57d1c.svg" alt="x_{i,j}"> for all other <img class="latex-inline" src="equations/cd9b18fa92.svg" alt="(i,j)">.
+  Therefore, a natural measure to use for <img class="latex-inline" src="equations/a3d003a3e0.svg" alt="Y"> is a coin toss measure defined using this subset of terms. Also notice that, because of the way that lattices in <img class="latex-inline" src="equations/a3d003a3e0.svg" alt="Y"> can be generated,<br>
+  the terms with coordinates in <img class="latex-inline" src="equations/a6adbafe93.svg" alt="R_1 = \{(i,j):i,j\geq 0\}"> are completely determined by those with coordinates in <img class="latex-inline" src="equations/99d38186f9.svg" alt="S_1 = \{(i,0):i\geq 0\}">, <br>
+  the terms with coordinates in <img class="latex-inline" src="equations/c31d8e626d.svg" alt="R_2 = \{(i,j):i\geq 0, j\leq-i-1\}"> are completely determined by those with coordinates in <img class="latex-inline" src="equations/e166d8c317.svg" alt="S_2 = \{(0,j):j\leq -1\}">,<br>
+  the terms with coordinates in <img class="latex-inline" src="equations/ad13ac6e0a.svg" alt="R_3 = \{(i,j):i\leq -1,j\leq -i-1\}"> are completely determined by those with coordinates in <img class="latex-inline" src="equations/bf3f75877a.svg" alt="S_3 = \{(i,0):i\leq -1\}"><br>
+  Finally, we can show that <img class="latex-inline" src="equations/3488de1d0a.svg" alt="\mu"> is translation invariant <span style="color:red">[###]</span>. 
+  Using this fact, given any frame and any translation vector, it is possible to translate the frame a finite number of times by that vector and then translate the original frame and the new frame so that they lie in separate regions <img class="latex-inline" src="equations/eac4773415.svg" alt="R_i"> <span style="color:red">[###]</span>.
+  This shows that the system we have defined is 2-fold mixing. <br>
+  Now, we can add the relationship from before, with the relationship of two adjacent terms to get: 
+  <img class="latex-inline" src="equations/b99b40c0bc.svg" alt="x_{i,j}+x_{i+1,j}+x_{i,j+1}+x_{i+1,j}+x_{i+2,j}+x_{i+1,j+1}+x_{i,j+1}+x_{i+1,j+1}+x_{i,j+2}= 0\mod 2 \implies x_{i,j}+x_{i+2,j}+x_{i,j+2}= 0\mod 2">.
+  By induction, we also have <img class="latex-inline" src="equations/a1cec4a326.svg" alt="x_{i,j}+x_{i+2^n,j}+x_{i,j+2^n}= 0\mod 2"> for all <img class="latex-inline" src="equations/e7b31363a1.svg" alt="n">. This shows, using the cylinder sets <img class="latex-inline" src="equations/b7511bab05.svg" alt="A = B = C = \{x\in X:x_{0,0}=1\}"> with <img class="latex-inline" src="equations/064f0cb7ad.svg" alt="\mu(A) = 1/2">, and the translation vectors <img class="latex-inline" src="equations/4e89981757.svg" alt="l = (1,0), p = (0,1)">,
+  That <img class="latex-inline" src="equations/6b34b61be3.svg" alt="\mu((A-2^nl)\cap(A-2^np)\cap A) = 0 \neq \mu(A)^3=1/8"> (since <img class="latex-inline" src="equations/0803d585ca.svg" alt="1+1+1 \not = 0 \mod 2">) for all <img class="latex-inline" src="equations/e7b31363a1.svg" alt="n">, so the system is not 3-fold mixing.
+</p>
 
 <p>
-  <b>Example: </b> Consider the space <img class="latex-inline" src="equations/2565230574.svg" alt="X = \{0,1\}^{\mathbb Z^2}">, with a family of shift functions which shift a point in this space an integer amount in each direction.
-  We will call a system mixing if <img class="latex-inline" src="equations/393706fa64.svg" alt="\mu((A-nl)\cap B) \to \mu(A)\mu(B)"> as <img class="latex-inline" src="equations/802e6889b4.svg" alt="n\to \infty"> for all <img class="latex-inline" src="equations/cf9f2e53ae.svg" alt="l\in \mathbb Z^2">,
-  3-fold mixing if <img class="latex-inline" src="equations/2dd602a5d0.svg" alt="\mu((A-nl)\cap(B-mp)\cap C) \to \mu(A)\mu(B)\mu(C)"> as <img class="latex-inline" src="equations/e1625d823d.svg" alt="n,m\to \infty"> for all <img class="latex-inline" src="equations/df37877d4f.svg" alt="l,q\in \mathbb Z^2">.
+  <b>Note: </b> The reason that this is not a counter-example for the 2-fold mixing implies 3-fold mixing in the dynamical system formulation is because in the above shift space, we have an entire of translation functions, while in a dynamical system, we only have one.
+  It is impossible to find 3 frames in the above example which depend on eachother but are arbitrarily far apart in a single direction. However, there is an example of a 1-d shift space which is not 3-fold mixing but is 2-fold mixing conditional to the sigma-algebra generated by a factor.
+</p>
+
+<p>
+  <b>Example: </b> <span style="color:red">[###]</span>
 </p>
 
 </body>
