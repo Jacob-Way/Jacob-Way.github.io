@@ -66,14 +66,15 @@ out and place it it region <latex>B</latex> of a second bucket of white paint, t
   <b>Example: </b> A common example of a dynamical system is a shift map. In this system, the space is a sequence space, and the transformation function shifts a sequence one term to the left or right.
   For example, <latex>X = \{0,1\}^{\mathbb Z}, f(x)_i := x_{i+1}</latex>, with <latex>\mu</latex> being the coin-toss measure. This system is mixing since different elements in any sequence are independently chosen,
   so any "cylinder set", which is a set defined by restricting a finite number of elements of the sequence, becomes independent from its translation eventually.
-  By the <span style="color:red">[incomplete]</span>
+  By Dynkin's <latex>\pi-\lambda</latex> theorem, we only need to consider cylinder sets.
   <br>
   We can use this space to exhibit two near-counterexamples which are 2-fold mixing but not 3-fold mixing.
 </p>
 
 <p>
   <b>Example: </b> Consider the space <latex>X = \{0,1\}^{\mathbb Z^2}</latex>, with a family of shift functions which shift a point in this space an integer amount in each direction.
-  We will call a system mixing if <span style="color:red">[incomplete]</span>
+  We will call a system mixing if <latex>\mu((A-nl)\cap B) \to \mu(A)\mu(B)</latex> as <latex>n\to \infty</latex> for all <latex>l\in \mathbb Z^2</latex>,
+  3-fold mixing if <latex>\mu((A-nl)\cap(B-mp)\cap C) \to \mu(A)\mu(B)\mu(C)</latex> as <latex>n,m\to \infty</latex> for all <latex>l,q\in \mathbb Z^2</latex>.
 </p>
 
 </body>
