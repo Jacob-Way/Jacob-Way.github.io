@@ -1,0 +1,38 @@
+%Basic Packages
+\usepackage[
+paperwidth=8.5in,
+paperheight=11in,
+textwidth=7in,
+marginparwidth=2in
+]{geometry} %Layout
+\usepackage{amsmath} %Math Stuff
+\usepackage{graphicx} %???
+%Tabs
+\usepackage{tabto}
+\NumTabs{16}
+%Titles
+\usepackage{titlesec}
+\renewcommand{\maketitle}{
+\noindent
+\textbf{Course:} \tab \tab \mycourse \\
+\textbf{Term:} \tab \tab \myterm \\
+\textbf{Instructor:} \tab \myinstructor \\
+\begin{center}
+    \huge \textbf{\mypart}\\
+    \mytitle
+\end{center}
+}
+%Header and Footer
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\mypart: \mytitle}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[R]{\textbf{\thepage} of \textbf{\pageref{LastPage}}}
+\fancyfoot[R]{\textit{Last Updated:} \today}
+
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{amssymb}

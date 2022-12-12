@@ -25,17 +25,17 @@
 <h2>Dynamical System Formulation</h2>
 
 <p>
-<b>Dynamical System: </b> A dynamical system is a 4-tuple <latex>(X,\mathcal B,\mu,f)</latex>, 
-where <latex>(X,\mathcal B,\mu)</latex> is a measure space and <latex>f:X\to X</latex> is a 
-function modeling some dynamics on the space <latex>X</latex>
+<b>Dynamical System: </b> A dynamical system is a 4-tuple $(X,\mathcal B,\mu,f)$, 
+where $(X,\mathcal B,\mu)$ is a measure space and $f:X\to X$ is a 
+function modeling some dynamics on the space $X$
 </p>
 
 <p>
-<b>Measure Preserving: </b> A dynamical system is measure-preserving if <latex>\mu(f^{-1}(A)) = \mu(A)</latex> for all <latex> A\in \mathcal B</latex>.
+<b>Measure Preserving: </b> A dynamical system is measure-preserving if $\mu(f^{-1}(A)) = \mu(A)$ for all $ A\in \mathcal B$.
 </p>
 
 <p>
-<b>Mixing: </b> A dynamical system is mixing if <latex>\lim_{n\to\infty}\mu(f^{-n}(A)\cap B) =\mu(A)\mu(B)</latex> for all <latex>A,B\in \mathcal B </latex>
+<b>Mixing: </b> A dynamical system is mixing if $\lim_{n\to\infty}\mu(f^{-n}(A)\cap B) =\mu(A)\mu(B)$ for all $A,B\in \mathcal B $
 </p>
 
 <p>
@@ -43,31 +43,31 @@ function modeling some dynamics on the space <latex>X</latex>
 </p>
 
 <p>
-<b>Example: </b> An easy way to understand this equation is using the example of mixing paint. If <latex>X</latex> represents
-the inside of a can of white paint, <latex>\mu</latex> measures the relative volume of regions in the bucket, and <latex>f</latex> models the effect of stirring the bucket,
-we can imagine replacing region <latex>B</latex> with blue paint, then stirring <latex>n</latex> times, then scooping paint from region <latex>A</latex>.
-If our stirring function is mixing, we can expect the proportion of the paint in region <latex>A</latex> which is blue (or which originated in region B) to be <latex>\mu(B)</latex>,
-the same as the proportion of blue paint before we stirred the bucket. Also, this fact will be independent of our choice of <latex>A</latex> and <latex>B</latex>.
+<b>Example: </b> An easy way to understand this equation is using the example of mixing paint. If $X$ represents
+the inside of a can of white paint, $\mu$ measures the relative volume of regions in the bucket, and $f$ models the effect of stirring the bucket,
+we can imagine replacing region $B$ with blue paint, then stirring $n$ times, then scooping paint from region $A$.
+If our stirring function is mixing, we can expect the proportion of the paint in region $A$ which is blue (or which originated in region B) to be $\mu(B)$,
+the same as the proportion of blue paint before we stirred the bucket. Also, this fact will be independent of our choice of $A$ and $B$.
 </p>
 
 <p>
-<b>3-fold mixing: </b> A dynamical system is 3-fold mixing if <latex>\lim_{n\to\infty, m\to\infty}\mu(f^{-m-n}(A)\cap f^{-n}(B)\cap C) =\mu(A)\mu(B)\mu(C)</latex> for all <latex>A,B,C\in \mathcal B </latex>
+<b>3-fold mixing: </b> A dynamical system is 3-fold mixing if $\lim_{n\to\infty, m\to\infty}\mu(f^{-m-n}(A)\cap f^{-n}(B)\cap C) =\mu(A)\mu(B)\mu(C)$ for all $A,B,C\in \mathcal B $
 </p>
 
 <p>
-<b>Note: </b> Using the paint mixing example, if <latex>f</latex> is 3-fold mixing, we could instead use two buckets of white paint, initially put blue paint in region <latex>C</latex>, stir <latex>m</latex> times, then scoop region <latex>B</latex>
-out and place it it region <latex>B</latex> of a second bucket of white paint, then mix <latex>n</latex> more times  and scoop out region <latex>A</latex>. The proportion of blue paint in this scoop should approach <latex>\mu(C)\mu(B)</latex> if we mix more.
+<b>Note: </b> Using the paint mixing example, if $f$ is 3-fold mixing, we could instead use two buckets of white paint, initially put blue paint in region $C$, stir $m$ times, then scoop region $B$
+out and place it it region $B$ of a second bucket of white paint, then mix $n$ more times  and scoop out region $A$. The proportion of blue paint in this scoop should approach $\mu(C)\mu(B)$ if we mix more.
 </p>
 
 <p>
-<b>Note: </b> We can easily see that 3-fold mixing implies 2-fold mixing by letting <latex>A=X</latex>. However, whether 2-fold mixing implies 3-fold mixing is surprisingly unknown.
+<b>Note: </b> We can easily see that 3-fold mixing implies 2-fold mixing by letting $A=X$. However, whether 2-fold mixing implies 3-fold mixing is surprisingly unknown.
 </p>
 
 <p>
   <b>Example: </b> A common example of a dynamical system is a shift map. In this system, the space is a sequence space, and the transformation function shifts a sequence one term to the left or right.
-  For example, <latex>X = \{0,1\}^{\mathbb Z}, f(x)_i := x_{i+1}</latex>, with <latex>\mu</latex> being the coin-toss measure. This system is mixing since different elements in any sequence are independently chosen,
+  For example, $X = \{0,1\}^{\mathbb Z}, f(x)_i := x_{i+1}$, with $\mu$ being the coin-toss measure. This system is mixing since different elements in any sequence are independently chosen,
   so any "cylinder set", which is a set defined by restricting a finite number of elements of the sequence, becomes independent from its translation eventually.
-  By Dynkin's <latex>\pi-\lambda</latex> theorem, we only need to consider cylinder sets.
+  By Dynkin's $\pi-\lambda$ theorem, we only need to consider cylinder sets.
   <br>
   We can use this space to exhibit two near-counterexamples which are 2-fold mixing but not 3-fold mixing.
 </p>
@@ -77,31 +77,31 @@ out and place it it region <latex>B</latex> of a second bucket of white paint, t
   We will find that, in this generalization, 2-fold mixing does not imply 3-fold mixing.
 </p>
 <p>
-  <b>Definition: </b> Consider a subspace of <latex>X = \{0,1\}^{\mathbb Z^2}</latex>, with a family of shift functions which shift a point in this space an integer amount in each direction.
-  We will call a system mixing if <latex>\mu((A-nl)\cap B) \to \mu(A)\mu(B)</latex> as <latex>n\to \infty</latex> for all <latex>l\in \mathbb Z^2</latex>,
-  3-fold mixing if <latex>\mu((A-nl)\cap(B-mp)\cap C) \to \mu(A)\mu(B)\mu(C)</latex> as <latex>n,m\to \infty</latex> for all <latex>l,p\in \mathbb Z^2</latex>.
+  <b>Definition: </b> Consider a subspace of $X = \{0,1\}^{\mathbb Z^2}$, with a family of shift functions which shift a point in this space an integer amount in each direction.
+  We will call a system mixing if $\mu((A-nl)\cap B) \to \mu(A)\mu(B)$ as $n\to \infty$ for all $l\in \mathbb Z^2$,
+  3-fold mixing if $\mu((A-nl)\cap(B-mp)\cap C) \to \mu(A)\mu(B)\mu(C)$ as $n,m\to \infty$ for all $l,p\in \mathbb Z^2$.
 </p>
 <p>
-  <b>Example: </b>We can show that the entire space <latex>X</latex>, with the coin toss measure and the family of translations forms a mixing and n-fold mixing system. The reason is that for every cylinder set, depending on a finite number of terms in a lattice,
-  we can enclose the terms determining the set by a finite frame, and for a set of <latex>n</latex> cylinder sets, we can choose a finite frame that determines all of the sets.
+  <b>Example: </b>We can show that the entire space $X$, with the coin toss measure and the family of translations forms a mixing and n-fold mixing system. The reason is that for every cylinder set, depending on a finite number of terms in a lattice,
+  we can enclose the terms determining the set by a finite frame, and for a set of $n$ cylinder sets, we can choose a finite frame that determines all of the sets.
   since every set of different terms in the lattice is independently chosen, and any shift applied over and over will eventually lead to a frame disjoint from its original position,
-  if <latex>\{X_n\}</latex> is a collection of cylinder sets depending on a finite frame, for any collection of shifts <latex>\{l_n\}</latex>, <latex>\{(X_n+l_nm_n)\}</latex> is independent for some choice of <latex>\{m_n\}</latex>.
+  if $\{X_n\}$ is a collection of cylinder sets depending on a finite frame, for any collection of shifts $\{l_n\}$, $\{(X_n+l_nm_n)\}$ is independent for some choice of $\{m_n\}$.
   Therefore, the system is N-fold mixing for all N.
 </p>
 <p>
   <b>Counterexample: </b> Using these new definitions for mixing, we can show that 2-fold mixing does not imply 3-fold mixing using a similar example.
-  Define <latex>Y = \{x\in X:x_{i,j}+x_{i+1,j}+x_{i,j+1} = 0\mod 2\}</latex>. Notice that, using this relationship, our choice of <latex>x_{i,j}</latex> for <latex>\{(i,0):i\in \mathbb Z\}, \{(j,0):j\leq -1\}</latex> allows us to determine <latex>x_{i,j}</latex> for all other <latex>(i,j)</latex>.
-  Therefore, a natural measure to use for <latex>Y</latex> is a coin toss measure defined using this subset of terms. Also notice that, because of the way that lattices in <latex>Y</latex> can be generated,<br>
-  the terms with coordinates in <latex>R_1 = \{(i,j):i,j\geq 0\}</latex> are completely determined by those with coordinates in <latex>S_1 = \{(i,0):i\geq 0\}</latex>, <br>
-  the terms with coordinates in <latex>R_2 = \{(i,j):i\geq 0, j\leq-i-1\}</latex> are completely determined by those with coordinates in <latex>S_2 = \{(0,j):j\leq -1\}</latex>,<br>
-  the terms with coordinates in <latex>R_3 = \{(i,j):i\leq -1,j\leq -i-1\}</latex> are completely determined by those with coordinates in <latex>S_3 = \{(i,0):i\leq -1\}</latex><br>
-  Finally, we can show that <latex>\mu</latex> is translation invariant <span style="color:red">[###]</span>. 
-  Using this fact, given any frame and any translation vector, it is possible to translate the frame a finite number of times by that vector and then translate the original frame and the new frame so that they lie in separate regions <latex>R_i</latex> <span style="color:red">[###]</span>.
+  Define $Y = \{x\in X:x_{i,j}+x_{i+1,j}+x_{i,j+1} = 0\mod 2\}$. Notice that, using this relationship, our choice of $x_{i,j}$ for $\{(i,0):i\in \mathbb Z\}, \{(j,0):j\leq -1\}$ allows us to determine $x_{i,j}$ for all other $(i,j)$.
+  Therefore, a natural measure to use for $Y$ is a coin toss measure defined using this subset of terms. Also notice that, because of the way that lattices in $Y$ can be generated,<br>
+  the terms with coordinates in $R_1 = \{(i,j):i,j\geq 0\}$ are completely determined by those with coordinates in $S_1 = \{(i,0):i\geq 0\}$, <br>
+  the terms with coordinates in $R_2 = \{(i,j):i\geq 0, j\leq-i-1\}$ are completely determined by those with coordinates in $S_2 = \{(0,j):j\leq -1\}$,<br>
+  the terms with coordinates in $R_3 = \{(i,j):i\leq -1,j\leq -i-1\}$ are completely determined by those with coordinates in $S_3 = \{(i,0):i\leq -1\}$<br>
+  Finally, we can show that $\mu$ is translation invariant <span style="color:red">[###]</span>. 
+  Using this fact, given any frame and any translation vector, it is possible to translate the frame a finite number of times by that vector and then translate the original frame and the new frame so that they lie in separate regions $R_i$ <span style="color:red">[###]</span>.
   This shows that the system we have defined is 2-fold mixing. <br>
   Now, we can add the relationship from before, with the relationship of two adjacent terms to get: 
-  <latex>x_{i,j}+x_{i+1,j}+x_{i,j+1}+x_{i+1,j}+x_{i+2,j}+x_{i+1,j+1}+x_{i,j+1}+x_{i+1,j+1}+x_{i,j+2}= 0\mod 2 \implies x_{i,j}+x_{i+2,j}+x_{i,j+2}= 0\mod 2</latex>.
-  By induction, we also have <latex>x_{i,j}+x_{i+2^n,j}+x_{i,j+2^n}= 0\mod 2</latex> for all <latex>n</latex>. This shows, using the cylinder sets <latex>A = B = C = \{x\in X:x_{0,0}=1\}</latex> with <latex>\mu(A) = 1/2</latex>, and the translation vectors <latex>l = (1,0), p = (0,1)</latex>,
-  That <latex>\mu((A-2^nl)\cap(A-2^np)\cap A) = 0 \neq \mu(A)^3=1/8</latex> (since <latex>1+1+1 \not = 0 \mod 2</latex>) for all <latex>n</latex>, so the system is not 3-fold mixing.
+  $x_{i,j}+x_{i+1,j}+x_{i,j+1}+x_{i+1,j}+x_{i+2,j}+x_{i+1,j+1}+x_{i,j+1}+x_{i+1,j+1}+x_{i,j+2}= 0\mod 2 \implies x_{i,j}+x_{i+2,j}+x_{i,j+2}= 0\mod 2$.
+  By induction, we also have $x_{i,j}+x_{i+2^n,j}+x_{i,j+2^n}= 0\mod 2$ for all $n$. This shows, using the cylinder sets $A = B = C = \{x\in X:x_{0,0}=1\}$ with $\mu(A) = 1/2$, and the translation vectors $l = (1,0), p = (0,1)$,
+  That $\mu((A-2^nl)\cap(A-2^np)\cap A) = 0 \neq \mu(A)^3=1/8$ (since $1+1+1 \not = 0 \mod 2$) for all $n$, so the system is not 3-fold mixing.
 </p>
 
 <p>
