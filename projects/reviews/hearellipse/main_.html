@@ -38,8 +38,11 @@
   So $u(x,t)=0$ describes a flat string, and $u(x,t) = x$ represents a string that is sloping upwards and not moving, and $u(x,t) = t$ represents a string that is flat and moving upwards. <br>
   To model the string of an instrument, we can also assume that the ends of the string are not moving. <br>
   This results in the differential equation $\frac{d^2}{dx^2}u=c_1\frac{d}{dt}u=c_2u$, with the boundary conditions $u(0)=u(1)=0$. <br>
-  The solutions are the functions $\sin()\sin(\frac{n\pi x}{L})$, for all $n\in \mathbb N$, 
-  $\Delta u$
+  The solutions are the functions $\sin(c_3n^2t)\sin(c_4nx)$, for all $n\in \mathbb N$, and some constants $c_3$ and $c_4$. <br>
+  The other way of looking at this problem is as finding the spectrum of the Laplace operator: <br>
+  $u$ is a solution if and only if $\Delta u = c_2 u$, that is $(\Delta -c_2 I)u = 0$. <br>
+  Using this view, the solution functions are eigenfunctions of $\Delta$ with eigenvalues $c_2$. <br>
+  For the case of a string, the eigenvalues happen to be evenly spaced.
 </p>
 ***Does the equation always have a solution?
 <h2>Weyl's Formula</h2>
